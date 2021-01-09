@@ -1,0 +1,17 @@
+.list-actions-container {
+    padding: 36px;
+    text-align: right;
+}
+
+.action-btn {
+    font-family: cursive;
+    padding: 12px;
+    margin: 0 12px;
+    border-style: hidden;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.action-btn:hover {
+    opacity: 0.8;
+}
