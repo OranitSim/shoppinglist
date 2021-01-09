@@ -1,0 +1,15 @@
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 0 0 6px 0;
+    background-color: darkslateblue;
+    color: #fff;
+    text-align: right;
+}
+
+.footer-copyrights {
+    font-family: cursive;
+    font-size: 12px;
+    padding: 4px 12px;
+}

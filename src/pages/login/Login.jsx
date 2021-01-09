@@ -1,6 +1,6 @@
 import React from 'react';
 import LoginImg from '../../img/bearwithcoffe.jpg'
-import './login.scss'
+import '../../style/pages/login/login.scss';
 class Login extends React.Component {
     constructor(props) {
         super(props)
