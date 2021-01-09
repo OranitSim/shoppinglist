@@ -1,10 +1,11 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import Login from './pages/login/Login';
 
 function App() {
   return (
     <div className="App">
-      <h1>Good job Oranit!!</h1>
+      <Login />
+
     </div>
   );
 }
