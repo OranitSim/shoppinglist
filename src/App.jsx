@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import './App.css';
+import './App.scss';
 import Footer from './components/Footer.jsx';
 import ListActions from './pages/shoppingList/ListActions.jsx';
 import { COMPLETED, DELETE } from './utils/enums'
