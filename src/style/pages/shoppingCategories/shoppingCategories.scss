@@ -1,0 +1,40 @@
+.categories-card {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+
+
+
+}
+.category {
+    margin: 20px;
+    background-color: white;
+    border-radius: 15px;
+    width: 100px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 20px 9px 15px 9px;
+    cursor: pointer;
+    border: 2px solid black;
+}
+
+.category:hover {
+    background-color: lightgray;
+}
+
+.category-img {
+    border-radius: 50px;
+    width: 95px;
+    height: 100px;
+
+}
+.category-name {
+    color: black;
+    font-size: 9px;
+    padding-top: 6px;
+
+}

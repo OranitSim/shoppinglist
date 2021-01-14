@@ -5,7 +5,14 @@
     margin: 0;
     padding: 0;
   }
-  
+  .backgroundimg {
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: top left;
+  }
+.img-login {
+    height: 200px;
+}
 .base-container {
     padding: 40px;
     margin: auto;
@@ -15,86 +22,103 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background: radial-gradient(
-        ellipse at left bottom,
-        rgb(68, 72, 116) 0%,
-        rgba(39, 97, 173, 0.9) 59%,
-        rgba(30, 92, 121, 0.9) 100%
-    );
     box-shadow: 0 50px 70px -20px rgba(0, 0, 0, 0.8);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background: radial-gradient(ellipse at left bottom,
+    #444874 0%, rgba(39, 97, 173, 0.9) 59%, rgba(30, 92, 121, 0.9) 100%);
+}
     
-    .header {
-        font-size: 24px;
-        font-family: cursive;
+.header {
+    font-size: 24px;
+    font-family: cursive;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.login-btn {
+    outline: none;
+    width: 100%;
+    font-size: 16px;
+    font-family: cursive;
+    padding: 5px 0px;
+    letter-spacing: 1px;
+    border: none;
+    background-color:darkslateblue ;
+    color: #fff;
+    border-radius: 3px;
+    transition: all 250ms ease-in-out;
+    cursor: pointer;
+    &:hover {
+      background-color: rgb(195, 220, 240);
+  
     }
+    &:focus {
+      outline: none;
+    }
+  
+  }
 
-    .content {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
 
 
-        .image {
-            width: 200px;
-            img {
-                width: 200px;
-            } 
 
-        }
+.form {
+    min-width: 200px;
+    margin-top: 2em;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: cursive;
+}
+    
 
-        .form {
-            min-width: 200px;
-            margin-top: 2em;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            font-family: cursive;
-       
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
 
-            .form-group {
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-                width: 100%;
-
-                label {
-                    font-size: 20px;
-                    color: white;
-                }
+.label-login {
+    font-size: 20px;
+    color: white;
+}
                 
-                input {
-                    outline: none;
-                    font-size: 16px;
-                    font-family: cursive;
-                    padding: 5px 0px;
-                    letter-spacing: 1px;
-                    border: none;
-                    margin-top: 4px;
-                    width: 100%;
-                    height: 37px;
-                    padding: 5px 0px;
-                    padding-left: 9px;
-                    font-size: 16px;
-                    font-family: cursive;
-                    background-color: rgb(245, 244, 244);
-                    border: 0;
-                    border-radius: 6px;
-                    margin-bottom: 6px;
-                    transition: all 250ms ease-in-out;
-                    &:focus {
-                        outline: none;
-                        box-shadow: 0px 0px 6px 0.8px #999ea196
-                    }
-                }
-            }
-        }
-        
-    }
-    .login-footer {
-        margin-top: 3em;
+.input-login {
+    outline: none;
+    font-size: 16px;
+    font-family: cursive;
+    padding: 5px 0px;
+    letter-spacing: 1px;
+    border: none;
+    margin-top: 4px;
+    width: 100%;
+    height: 37px;
+    padding: 5px 0px;
+    padding-left: 9px;
+    font-size: 16px;
+    font-family: cursive;
+    background-color: rgb(245, 244, 244);
+    border: 0;
+    border-radius: 6px;
+    margin-bottom: 6px;
+    transition: all 250ms ease-in-out;
+    &:focus {
+        outline: none;
+        box-shadow: 0px 0px 6px 0.8px #999ea196
     }
 }
+        
+.login-footer {
+    width: 100%;
+    margin-top: 3em;
+}
+
 
 
     
