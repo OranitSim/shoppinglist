@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { COMPLETED, DELETE } from '../../utils/enums';
-import '../../style/pages/shoppingList.css';
+import '../../style/pages/shoppingList/shoppingList.scss';
 
 export default class ListActions extends Component {
     state = {

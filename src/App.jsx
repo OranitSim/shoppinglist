@@ -2,6 +2,7 @@ import { Component } from 'react';
 import './App.scss';
 import Footer from './components/Footer.jsx';
 import ListActions from './pages/shoppingList/ListActions.jsx';
+import Login from './pages/login/Login.jsx';
 import { COMPLETED, DELETE } from './utils/enums'
 
 export default class App extends Component {
@@ -24,8 +25,8 @@ export default class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>Good job Oranit!!</h1>
-        <ListActions onAction={this.onAction} />
+        <Login />
+        {/* <ListActions onAction={this.onAction} /> */}
         <Footer />
       </div>
     );
