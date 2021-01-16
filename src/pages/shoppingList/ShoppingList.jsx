@@ -2,12 +2,19 @@ import React, { useState} from 'react'
 import LoginImg from '../../img/panda.jpg'
 import AddItem from './AddItem'
 import ShoppingItems from './ShopingItems'
+import CategoryNotes from './shoppingListNotes/CategoryNotes.jsx'
 import '../../style/style.scss'
 import ShoppingCatgories from '../shoppingListCatgories/ShoppingCatgroies'
 import {
     vegetablesImg,
     fruitsImg,
-    meatfishImg
+    meatfishImg,
+    milkImg,
+    alcoholImg,
+    pharmImg,
+    hygieneImg,
+    beautyImg,
+    otherImg
 } from '../shoppingListCatgories/ImportImage';
 
 const proudects = [
@@ -45,23 +52,31 @@ const defCategories = [
     {
         type: 'meat&fish',
         image: meatfishImg
+    },
+    {
+        type: 'dairy',
+        image: milkImg
+    },
+    {
+        type: 'alchol',
+        image: alcoholImg
+    },
+    {
+        type: 'pharm',
+        image: pharmImg
+    },
+    {
+        type: 'hygiene',
+        image: hygieneImg
+    },
+    {
+        type: 'beauty and cosmetics',
+        image: beautyImg
+    },
+    {
+        type: 'others',
+        image: otherImg
     }
-    // {
-    //     type: 'dairy',
-    //     image: milkImg
-    // },
-    // {
-    //     type: 'alchol',
-    //     image: alcholsImg
-    // },
-    // {
-    //     type: 'pharm',
-    //     image: pharmImg
-    // },
-    // {
-    //     type: 'others',
-    //     image: othersImg
-    // }
 ]
 
 function ShoppingList() {
@@ -103,13 +118,16 @@ function ShoppingList() {
 
 
     return (
-        <div className="main-container">
-            <AddItem addItem={addItem} onClick={addItem} />
-            <div className="categories-card">
-                <ShoppingCatgories filterByCategory={filterByCategory} categories={categories}/>
-            </div>
-            <ShoppingItems items={items.filter(item => item.category === selectedCategory || selectedCategory === 'none')}  removeItem={removeItem} changeCount={changeCount} />
-            
+        <div className="categories-card-note">
+            <CategoryNotes items={items} filterByCategory={filterByCategory} categories={categories} />
+            {/* <div className="main-container"> */}
+                {/* <AddItem addItem={addItem} onClick={addItem} /> */}
+                {/* <div className="categories-card"> */}
+                    {/* <ShoppingCatgories filterByCategory={filterByCategory} categories={categories}/> */}
+                {/* </div> */}
+                {/* <ShoppingItems items={items.filter(item => item.category === selectedCategory || selectedCategory === 'none')}  removeItem={removeItem} changeCount={changeCount} /> */}
+                
+            {/* </div> */}
         </div>
     )
 }
