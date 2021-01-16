@@ -1,0 +1,26 @@
+.notebook-container {
+    height: 500px;
+    width: 400px;
+    background-color: lightyellow;
+    padding-top: 36px;
+}
+
+.notebook-item {
+    border-bottom: 1px solid rgb(92, 92, 92);
+    padding: 8px;
+    margin: 8px 36px;
+    text-align: left;
+    
+    span {    
+        color: black;
+        font-family: cursive;
+        font-size: 18px;
+    }
+}
+
+
+.notebook-space {
+    width: 24px;
+    display: inline-block;
+    height: 10px;
+}

@@ -1,8 +1,9 @@
+import './style/App.scss';
+import Login from './pages/login/Login';
 import { Component } from 'react';
-import './App.scss';
+import './style/App.scss';
 import Footer from './components/Footer.jsx';
-import ListActions from './pages/shoppingList/ListActions.jsx';
-import Login from './pages/login/Login.jsx';
+import ShoppingList from './pages/shoppingList/ShoppingList.jsx';
 import { COMPLETED, DELETE } from './utils/enums'
 
 export default class App extends Component {
@@ -25,9 +26,11 @@ export default class App extends Component {
   render() {
     return (
       <div className="App">
-        <Login />
-        {/* <ListActions onAction={this.onAction} /> */}
-        <Footer />
+        {/* <div class="image-background" style={{backgroundImage:`url(${background})`}} > */}
+
+          {/* <Login/> */}
+          < ShoppingList  />
+          <Footer />
       </div>
     );
   }

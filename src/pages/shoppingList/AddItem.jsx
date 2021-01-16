@@ -1,29 +1,47 @@
-import React, { Component } from 'react'
+import React, {useState} from 'react'
+import '../../style/style.scss'
+import { MdAddShoppingCart } from 'react-icons/md'
 
-export default class AddItem extends Component {
-    state = {
+
+function AddItem(props) {
+    const newProduct = {
         name: "",
-        count: 0
+        count: 1,
+        category: 'others'
     }
+    const [newItem, setNewItem] = useState(newProduct);
+    const handleKeyDown = (e) => {
+        if ( e.key === 'Enter') {
+            handlClick();
+        }
 
-    setName = (e) => {
-        this.setState({name: e.target.value})
     }
+   
 
-    setCount = (e) => {
-        this.setState({count: e.target.value})
+    const handelChange = e => {
+      setNewItem({name: e.target.value, count: 1});  
     }
+    const handlClick = () => {
+        props.onClick(newItem);
+        setNewItem(newProduct);
 
-    render() {
-        return (
-            <div>
-                <input type="text" onChange={this.setName}/>
-                <input type="number" onChange={this.setCount} />
-                <button onClick={this.props.addItem.bind(this, this.state.name, this.state.count)}>
-                    Add
-                </button>
+    };
 
-            </div>
-        )
-    }
+
+    return (
+        <div className="add-item-box" >
+          <input onKeyDown={handleKeyDown}
+           type="text" 
+            placeholder="Add proudect"
+            value={newItem.name}
+            className="new-item"
+            onChange={handelChange}
+          />  
+            <div >
+                <MdAddShoppingCart onClick={handlClick} className="icon-shopping-cart"/> 
+            </div>    
+        </div>
+    )
 }
+
+export default AddItem
