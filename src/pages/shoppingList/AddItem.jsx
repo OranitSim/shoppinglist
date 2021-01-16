@@ -7,7 +7,8 @@ function AddItem(props) {
     const newProduct = {
         name: "",
         count: 1,
-        category: 'others'
+        category: 'others',
+        checked: false
     }
     const [newItem, setNewItem] = useState(newProduct);
     const handleKeyDown = (e) => {

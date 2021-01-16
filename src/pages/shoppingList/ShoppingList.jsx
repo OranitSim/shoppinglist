@@ -13,24 +13,28 @@ import {
 
 const proudects = [
     {
-    name: 'Milk',
-    count: 2,
-    category: 'dairy'
+        name: 'Milk',
+        count: 2,
+        category: 'dairy',
+        checked: false
     },
     {
         name: 'Eggs',
         count: 12,
-        category: 'others'
+        category: 'others',
+        checked: false
     },
     {
         name: 'Honey',
         count: 1,
-        category: 'others'
+        category: 'others',
+        checked: false
     },
     {
         name: 'Apple',
         count: 1,
-        category: 'fruits'
+        category: 'fruits',
+        checked: false
     }
 ]
 
@@ -91,7 +95,7 @@ function ShoppingList() {
         console.log(count,name)
         const incrementArr = [...items].map( item => {
             if ( item.name === name ) {
-                return {name, category: item.category, count};
+                return {name, category: item.category, count, checked: item.checked};
             } else return item;
         });
         setItems(incrementArr);
@@ -102,15 +106,19 @@ function ShoppingList() {
         setSelectedCategory(category)
     }
 
+    const toggleChecked = name => {
+        setItems([...items].map(item => item.name === name ? {...item, checked: !item.checked} : item));
+    }
+
 
     return (
         <div className="main-container">
-            {/* <AddItem addItem={addItem} onClick={addItem} />
-            <div className="categories-card">
+            <AddItem addItem={addItem} onClick={addItem} />
+            {/* <div className="categories-card">
                 <ShoppingCatgories filterByCategory={filterByCategory} categories={categories}/>
             </div>
             <ShoppingItems items={items.filter(item => item.category === selectedCategory || selectedCategory === 'none')}  removeItem={removeItem} changeCount={changeCount} /> */}
-            <ShoppingListNotebook items={items} removeItem={removeItem} changeCount={changeCount} />
+            <ShoppingListNotebook items={items} removeItem={removeItem} changeCount={changeCount} toggleChecked={toggleChecked} />
         </div>
     )
 }
