@@ -2,6 +2,7 @@ import './style/App.scss';
 import Login from './pages/login/Login';
 import { Component } from 'react';
 import './style/App.scss';
+import Header from './components/Headet.jsx'
 import Footer from './components/Footer.jsx';
 import ShoppingList from './pages/shoppingList/ShoppingList.jsx';
 import { COMPLETED, DELETE } from './utils/enums'
@@ -29,6 +30,7 @@ export default class App extends Component {
         {/* <div class="image-background" style={{backgroundImage:`url(${background})`}} > */}
 
           {/* <Login/> */}
+          <Header/>
           < ShoppingList  />
           <Footer />
       </div>

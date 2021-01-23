@@ -1,12 +1,14 @@
 @import './pages/login/login.scss';
 @import './pages/shoppingList/shoppingList.scss';
 @import './App.scss';
-@import './pages/shoppingCategories/shoppingCategories.scss';
-@import '../style/pages/categoryNotes/shoppingNotes.scss';
+@import './pages/categoryNotes/shoppingNote.scss';
+// @import '../style/pages/categoryNotes/shoppingNote.scss';
+@import '../style/components/header.scss';
+@import './insdex.scss';
+// @import './pages/categoryNotes/shoppingNote.scss';
 
 
-body {
-    background-color: white;
-}
+
+
 
 

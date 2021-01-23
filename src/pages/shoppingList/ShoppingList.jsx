@@ -2,7 +2,8 @@ import React, { useState} from 'react'
 import LoginImg from '../../img/panda.jpg'
 import AddItem from './AddItem'
 import ShoppingItems from './ShopingItems'
-import CategoryNotes from './shoppingListNotes/CategoryNotes.jsx'
+// import CategoryNotes from './shoppingListNotes/CategoryNotes.jsx'
+import ShoppingStore from './shoppingNote/ShoppingStore'
 import '../../style/style.scss'
 import ShoppingCatgories from '../shoppingListCatgories/ShoppingCatgroies'
 import ShoppingListNotebook from './shoppingListNotebook/ShoppingListNotebook.jsx';
@@ -128,7 +129,8 @@ function ShoppingList() {
 
     return (
         <div className="categories-card-note">
-            <CategoryNotes items={items} filterByCategory={filterByCategory} categories={categories} />
+            < ShoppingStore />
+            {/* <CategoryNotes items={items} filterByCategory={filterByCategory} categories={categories} /> */}
             {/* <div className="main-container"> */}
                 {/* <AddItem addItem={addItem} onClick={addItem} /> */}
                 {/* <div className="categories-card"> */}
