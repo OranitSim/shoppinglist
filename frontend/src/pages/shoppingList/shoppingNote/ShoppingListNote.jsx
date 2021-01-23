@@ -5,6 +5,7 @@ import AddItem from '../AddItem.jsx'
 
 
 function ShoppingListNote({items, categories, changeCount, removeItem, toggleChecked}) {
+    console.log(items)
     return (
         <div className="categories-card-note" >
         <NoteItemsList items={items} 

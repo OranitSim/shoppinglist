@@ -1,39 +1,72 @@
 import './style/App.scss';
 import Login from './pages/login/Login';
-import { Component } from 'react';
+import { Component, useEffect, useState } from 'react';
+import axios from 'axios';
 import './style/App.scss';
 import Header from './components/Headet.jsx'
 import Footer from './components/Footer.jsx';
-import ShoppingList from './pages/shoppingList/ShoppingList.jsx';
+import ShoppingStore from './pages/shoppingList/shoppingNote/ShoppingStore.jsx';
 import { COMPLETED, DELETE } from './utils/enums'
 
-export default class App extends Component {
+function App() {
+  const [categories, setCategories] = useState([]);
+  const [items, setItems] = useState([]);
 
-  onAction = action => {
-    console.log('Action:', action);
-    switch (action) {
-      case COMPLETED:
-        console.log('List is completed!!');
-        break;
-      case DELETE:
-        console.log('Deleting list....');
-        break;
-      default:
-        console.error('Uknown action...');
-        break;
+  const getCatigories = async () => {
+    try {
+    const dataDefCategories = await axios.get("http://localhost:8080/categories")
+    setCategories(dataDefCategories.data);
+      console.log(dataDefCategories.data);
+    
+    } catch (err) {
+      console.error(err.message);
     }
-  }
+  };
+  useEffect(()=>{
+    console.log(categories)
+      
+    getCatigories()
+  }, [])
 
-  render() {
+
+
+  
+  const getItems = async () => {
+    try {
+    const dataItems = await axios.get("http://localhost:8080/items")
+    console.log(items)
+    setItems(dataItems.data);
+    console.log("items after:", items)
+      
+      console.log(dataItems.data);
+    
+    } catch (err) {
+      console.error(err.message);
+    }
+  };
+  useEffect(()=>{
+    console.log(items)
+      
+    getItems()
+  }, [])
+
+
+
     return (
-      <div className="App">
-        {/* <div class="image-background" style={{backgroundImage:`url(${background})`}} > */}
+    <div className="App">
+      {/* <div class="image-background" style={{backgroundImage:`url(${background})`}} > */}
+      {/* <ul>
+       {items.map(item=>(
+         <li key={item.name}>{item.count}</li>
+       ))}
+     </ul> */}
 
-          {/* <Login/> */}
-          <Header/>
-          < ShoppingList  />
-          <Footer />
-      </div>
-    );
-  }
+        {/* <Login/> */}
+        <Header/>
+        <ShoppingStore items={items} setItems={setItems} categories={categories} setCategories={setCategories} />
+        <Footer />
+    </div>
+  );
+  
 }
+export default App

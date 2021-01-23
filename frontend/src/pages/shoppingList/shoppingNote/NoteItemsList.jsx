@@ -2,6 +2,7 @@ import React from 'react';
 import Note from './Note.jsx'
 
 function NoteItemsList({items, categories, changeCount, removeItem, toggleChecked}) {
+    console.log(items)
     return categories.map(category => {
         return (
             <Note items={items.filter(item => item.category === category.type)}

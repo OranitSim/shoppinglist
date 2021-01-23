@@ -19,32 +19,6 @@ import {
     otherImg
 } from '../shoppingListCatgories/ImportImage';
 
-const proudects = [
-    {
-        name: 'Milk',
-        count: 2,
-        category: 'dairy',
-        checked: false
-    },
-    {
-        name: 'Eggs',
-        count: 12,
-        category: 'others',
-        checked: false
-    },
-    {
-        name: 'Honey',
-        count: 1,
-        category: 'others',
-        checked: false
-    },
-    {
-        name: 'Apple',
-        count: 1,
-        category: 'fruits',
-        checked: false
-    }
-]
 
 const defCategories = [
     {
@@ -85,8 +59,7 @@ const defCategories = [
     }
 ]
 
-function ShoppingList() {
-    const [items, setItems] = useState(proudects);
+function ShoppingList({items, setItems}) {
     const [categories, setCategories] = useState(defCategories);
     const [selectedCategory, setSelectedCategory] = useState('none');
 
@@ -125,11 +98,12 @@ function ShoppingList() {
     const toggleChecked = name => {
         setItems([...items].map(item => item.name === name ? {...item, checked: !item.checked} : item));
     }
+    console.log(items)
 
 
     return (
         <div className="categories-card-note">
-            < ShoppingStore />
+            < ShoppingStore items={items} setItems={setItems}/>
             {/* <CategoryNotes items={items} filterByCategory={filterByCategory} categories={categories} /> */}
             {/* <div className="main-container"> */}
                 {/* <AddItem addItem={addItem} onClick={addItem} /> */}
