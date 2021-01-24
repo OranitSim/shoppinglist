@@ -22,16 +22,43 @@
     background-color: white;
     width: 250px;
     height: auto;
-    min-height: 2.7em;
+    min-height: 15em;
     margin: 20px;
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
-    padding: 6em 1em;
+    padding: 1em 1em;
     font-size: 1.1em;
     cursor: pointer;
     border-radius: .15em;
 
+}
+.note-item {
+    border-bottom: 1px solid rgb(92, 92, 92);
+    padding: 8px;
+    // margin: 8px 36px;
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+
+.note-item-details {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.note-item-checked {    
+    text-decoration: line-through;
+    text-decoration-thickness: .1em;
+    text-decoration-color: #000;
+}
+
+.note-category-name {
+    display: flex;
+    justify-content: center;
 }
 
 
@@ -48,6 +75,8 @@
     padding: 4px;
     cursor: pointer;
     transition: all ease-in 0.1s;
+    width: 20px;
+    height: 20px;
 
     &:hover {
         background-color: #ff0000;
@@ -58,6 +87,8 @@
     color: #000;
     margin: 0 4px;
     padding: 4px;
+    height: 20px;
+    width: 20px;
     cursor: pointer;
     border-radius: 50%;
     transition: all ease-in 0.1s;

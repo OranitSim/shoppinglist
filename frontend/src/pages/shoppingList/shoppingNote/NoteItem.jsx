@@ -19,10 +19,11 @@ function NoteItem({ items, changeCount, removeItem, toggleChecked}) {
     }
 
 
-    return items.map (({name,count}) => { return ( 
+    return items.map (({name, count, checked}) => { return ( 
         <div>
-            <section>
-                <div onClick={() => handleToggleChecked(name)}>
+            <section className="note-item">
+            <div onClick={() => handleToggleChecked(name)}
+                    className={`note-item-details${checked ? " note-item-checked" : ""}`}>
                     <IoClose onClick={e => handleRemove(e, name)} className="note-remove-icon" />
                     <div>
                         <span>{name}</span>
